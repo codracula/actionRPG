@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgxahyvkyx2ny"]
+
+[ext_resource type="Texture2D" uid="uid://bftgk28ertuqp" path="res://World/Grass.png" id="1_kuc6e"]
+[ext_resource type="Script" path="res://grass.gd" id="1_nyeaa"]
+[ext_resource type="PackedScene" uid="uid://blaj4g6q2wuaf" path="res://hitboxes/hurtbox.tscn" id="3_c8573"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf4l4"]
+size = Vector2(14, 13)
+
+[node name="Grass" type="Node2D"]
+script = ExtResource("1_nyeaa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, -19)
+texture = ExtResource("1_kuc6e")
+centered = false
+
+[node name="hurtbox" parent="." instance=ExtResource("3_c8573")]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_cf4l4")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="hurtbox"]

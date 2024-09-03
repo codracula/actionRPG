@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0xplj72xl30w"]
+
+[ext_resource type="Texture2D" uid="uid://cecog3be8q0a0" path="res://World/tiles_packed.png" id="1_rnmfm"]
+
+[node name="House" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -19.3898)
+scale = Vector2(2.26471, 2.26471)
+texture = ExtResource("1_rnmfm")
+region_enabled = true
+region_rect = Rect2(108, 0, 18, 17)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_rnmfm")
+region_enabled = true
+region_rect = Rect2(180, 103, 18, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
